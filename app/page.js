@@ -2,7 +2,6 @@ import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 
 export default async function HomePage() {
-  console.log("cookies:", cookies().getAll());
 
   const cookieStore = await cookies(); // MUST await
   const token = cookieStore.get("session_token")?.value;
