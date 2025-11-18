@@ -3,8 +3,7 @@ import { redirect } from "next/navigation";
 
 export default async function HomePage() {
 
-  const cookieStore = await cookies(); // MUST await
-  const token = await cookieStore.get("session_token")?.value;
+  const token  = await cookies().get("session_token").value;
   console.log(token)
 
   if (!token) {
