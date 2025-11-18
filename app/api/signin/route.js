@@ -48,7 +48,7 @@ export async function POST(request){
     secure: process.env.NODE_ENV === 'production', // Use HTTPS
     maxAge: 60 * 60 * 24 * 7, // 7 days (matching JWT expiry)
     path: '/',
-    sameSite: 'strict'
+    sameSite: 'lax'
             })
             console.log("finally cookies have set")
             return NextResponse.json({message:"login succesfull"},{status:200})
